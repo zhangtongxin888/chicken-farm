@@ -6,7 +6,7 @@
     "domain": "chickenfarmgame.wiki"
   },
   "reviewed_by": "Codex",
-  "reviewed_at": "2026-08-19T15:35:17Z",
+  "reviewed_at": "2026-08-19T18:10:54Z",
   "design_package": {
     "path": ".launch/design/kimi-design-v1.json",
     "sha256": "030b09151d3edce12f4621ad3ada0cc55a975ee37a33b88d83b3ba670cc071ff",
@@ -16,33 +16,33 @@
   "status": "approved",
   "review_method": {
     "handoff_validator": "passed",
-    "viewport_method": "Static DOM/CSS viewport audit plus local HTTP route rendering",
-    "browser_visual_check": "Not opened because the batch browser lock was not granted; coordinator requested local-only checks and final independent recheck remains required."
+    "viewport_method": "Formal-domain visual inspection in an isolated agent-browser session at 375x900, 768x1024, and 1440x900",
+    "browser_visual_check": "Passed on https://chickenfarmgame.wiki/ after DNS and TLS activation; no horizontal overflow was observed and the primary CTA was clicked through to the internal beginner guide."
   },
   "viewport_checks": {
     "375": {
       "result": "pass",
       "evidence": [
-        "Mobile media rules apply below 720px.",
-        "Hero, loop, progression, mistake, and tip layouts become one column.",
-        "Primary and secondary calls to action become full width.",
-        "Navigation collapses behind a labeled 44px menu control."
+        "Formal homepage rendered at 375x900 with scrollWidth equal to viewport width (375px).",
+        "Hero copy, illustration transition, and both calls to action were legible without clipping.",
+        "Navigation collapsed behind a labeled 44px menu control.",
+        "The largest visible clickable was Start the beginner guide, targeting /beginner-guide/."
       ]
     },
     "768": {
       "result": "pass",
       "evidence": [
-        "Tablet media rules apply below 980px.",
-        "Hero becomes one column and card groups use two columns.",
-        "Beginner-guide contents move into normal flow instead of remaining sticky."
+        "Formal homepage rendered at 768x1024 with scrollWidth equal to viewport width (768px).",
+        "Tablet navigation, hero copy, calls to action, and farm illustration were fully visible without overlap.",
+        "The largest visible clickable was Start the beginner guide, targeting /beginner-guide/."
       ]
     },
     "1440": {
       "result": "pass",
       "evidence": [
-        "Content is bounded to 1160px with side gutters.",
-        "Hero uses two columns and the core loop uses four columns.",
-        "Beginner-guide contents remain visible in a sticky desktop sidebar."
+        "Formal homepage rendered at 1440x900 with scrollWidth equal to viewport width (1440px).",
+        "The two-column hero, bounded content, navigation, calls to action, and farm illustration were fully visible without overlap.",
+        "The largest visible clickable was Start the beginner guide; clicking it reached https://chickenfarmgame.wiki/beginner-guide/."
       ]
     }
   },
@@ -119,8 +119,8 @@
       "resolution": "Codex added canonical metadata, Open Graph/Twitter metadata, JSON-LD, robots.txt, sitemap.xml, security headers, and an original social card."
     },
     {
-      "issue": "The batch browser lock was held by another site.",
-      "resolution": "No shared browser was opened; local static viewport checks and HTTP rendering passed, and the coordinator must independently recheck before final acceptance."
+      "issue": "The initial acceptance record was limited to static viewport checks because the browser lock was unavailable.",
+      "resolution": "The authorized retry completed formal-domain visual checks at 375, 768, and 1440 pixels in an isolated browser session; the primary CTA was confirmed as an internal beginner-guide entry."
     }
   ],
   "automated_checks": {
