@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260819-224500",
+  "status": "待研究",
+  "game": {
+    "official_name": "Chicken Farm",
+    "slug": "chicken-farm",
+    "roblox_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+    "place_id": "137233438285284"
+  },
+  "domain": "chickenfarmgame.wiki",
+  "repository": {
+    "fullName": "zhangtongxin888/chicken-farm",
+    "url": "https://github.com/zhangtongxin888/chicken-farm",
+    "localPath": "/Users/zhangtongxin/sites/chicken-farm"
+  },
+  "candidate_worktree_path": "/Users/zhangtongxin/sites/chicken-farm-kimi-candidate",
+  "allowed_kimi_paths": [
+    "app",
+    "components",
+    "public",
+    "src",
+    "styles",
+    "package.json",
+    "next.config.js",
+    "next.config.mjs",
+    "next.config.ts",
+    "tsconfig.json",
+    ".launch/design"
+  ],
+  "hosting": {
+    "target": "cloudflare-or-vercel"
+  },
+  "providers": {
+    "research": {"name": "Grok", "model": "grok-4.6"},
+    "design": {"name": "Kimi", "model": "kimi-code/k3"},
+    "code": {"name": "Codex", "model": "gpt-5.6-sol"}
+  }
+}
