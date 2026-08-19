@@ -3,7 +3,13 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "framework": null,
-  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/beginner-guide",
+      "destination": "/beginner-guide/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
