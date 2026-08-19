@@ -18,7 +18,7 @@
         {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
         {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()"},
         {"key": "X-Frame-Options", "value": "DENY"},
-        {"key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; connect-src 'none'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self'; upgrade-insecure-requests"}
+        {"key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; connect-src 'none'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline' https://pl30931003.effectivecpmnetwork.com https://pl30931004.effectivecpmnetwork.com https://pl30931007.effectivecpmnetwork.com https://www.effectivecpmnetwork.com https://www.highperformanceformat.com; style-src 'self'; upgrade-insecure-requests"}
       ]
     },
     {
