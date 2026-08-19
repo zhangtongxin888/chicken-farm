@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260819-224500",
+  "game": {
+    "official_name": "Chicken Farm",
+    "domain": "chickenfarmgame.wiki"
+  },
+  "reviewed_by": "Codex",
+  "reviewed_at": "2026-08-19T15:35:17Z",
+  "design_package": {
+    "path": ".launch/design/kimi-design-v1.json",
+    "sha256": "030b09151d3edce12f4621ad3ada0cc55a975ee37a33b88d83b3ba670cc071ff",
+    "provider": "Kimi",
+    "model": "kimi-code/k3"
+  },
+  "status": "approved",
+  "review_method": {
+    "handoff_validator": "passed",
+    "viewport_method": "Static DOM/CSS viewport audit plus local HTTP route rendering",
+    "browser_visual_check": "Not opened because the batch browser lock was not granted; coordinator requested local-only checks and final independent recheck remains required."
+  },
+  "viewport_checks": {
+    "375": {
+      "result": "pass",
+      "evidence": [
+        "Mobile media rules apply below 720px.",
+        "Hero, loop, progression, mistake, and tip layouts become one column.",
+        "Primary and secondary calls to action become full width.",
+        "Navigation collapses behind a labeled 44px menu control."
+      ]
+    },
+    "768": {
+      "result": "pass",
+      "evidence": [
+        "Tablet media rules apply below 980px.",
+        "Hero becomes one column and card groups use two columns.",
+        "Beginner-guide contents move into normal flow instead of remaining sticky."
+      ]
+    },
+    "1440": {
+      "result": "pass",
+      "evidence": [
+        "Content is bounded to 1160px with side gutters.",
+        "Hero uses two columns and the core loop uses four columns.",
+        "Beginner-guide contents remain visible in a sticky desktop sidebar."
+      ]
+    }
+  },
+  "primary_entry_check": {
+    "result": "pass",
+    "largest_button_label": "Start the beginner guide",
+    "target": "/beginner-guide/",
+    "internal": true,
+    "roblox_link_is_secondary": true
+  },
+  "accessibility_checks": {
+    "result": "pass",
+    "body_text_contrast_ratio": 13.08,
+    "light_on_dark_contrast_ratio": 10.79,
+    "checks": [
+      "Visible keyboard focus states",
+      "Skip links on both pages",
+      "Labeled menu and checklist controls",
+      "Native details/summary FAQ controls",
+      "Reduced-motion support",
+      "No hover-only content"
+    ]
+  },
+  "navigation_checks": {
+    "result": "pass",
+    "routes": [
+      "/",
+      "/beginner-guide/"
+    ],
+    "notes": "All internal links and fragments are checked by src/lint.mjs; the beginner guide links back to the homepage sections."
+  },
+  "fact_reference_checks": {
+    "result": "pass",
+    "approved_fact_ids_used": [
+      "fact-001",
+      "fact-002",
+      "fact-006",
+      "fact-007",
+      "fact-008",
+      "fact-010",
+      "fact-013",
+      "fact-014",
+      "fact-015",
+      "fact-016",
+      "fact-020",
+      "fact-021"
+    ],
+    "rejected_fact_ids_used": [],
+    "notes": "Published copy excludes current code lists, exact rebirth costs, complete chicken tiers, and exact Gem Upgrade effects."
+  },
+  "asset_license_checks": {
+    "result": "pass",
+    "assets": [
+      {
+        "path": "public/og.png",
+        "source": "OpenAI built-in image generation for this project",
+        "license_status": "Original generated asset; no third-party image source",
+        "sha256": "82dd31b0941850baac94de7b4e942c0f12db3e603dafeb9787cdbba6ebc07f6a"
+      },
+      {
+        "path": "public/styles.css",
+        "source": "Kimi candidate plus Codex production review",
+        "license_status": "Original CSS illustration; no third-party image source"
+      }
+    ]
+  },
+  "issues_and_resolutions": [
+    {
+      "issue": "The candidate called the first purchase an egg even though approved research says players buy chickens and convert eggs into cash.",
+      "resolution": "Codex corrected homepage and tutorial copy to buy a chicken, collect and deposit eggs, then collect cash."
+    },
+    {
+      "issue": "The candidate lacked production SEO files and a social preview image.",
+      "resolution": "Codex added canonical metadata, Open Graph/Twitter metadata, JSON-LD, robots.txt, sitemap.xml, security headers, and an original social card."
+    },
+    {
+      "issue": "The batch browser lock was held by another site.",
+      "resolution": "No shared browser was opened; local static viewport checks and HTTP rendering passed, and the coordinator must independently recheck before final acceptance."
+    }
+  ],
+  "automated_checks": {
+    "npm_run_audit_design": "passed",
+    "npm_run_lint": "passed",
+    "npm_test": "passed",
+    "npm_run_build": "passed"
+  },
+  "final_decision": "approved"
+}

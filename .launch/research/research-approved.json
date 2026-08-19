@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260819-224500",
+  "game": {
+    "official_name": "Chicken Farm",
+    "domain": "chickenfarmgame.wiki"
+  },
+  "reviewed_by": "Codex",
+  "reviewed_at": "2026-08-19T15:03:25Z",
+  "approved_fact_ids": [
+    "fact-001",
+    "fact-002",
+    "fact-003",
+    "fact-004",
+    "fact-005",
+    "fact-006",
+    "fact-007",
+    "fact-008",
+    "fact-009",
+    "fact-010",
+    "fact-011",
+    "fact-013",
+    "fact-014",
+    "fact-015",
+    "fact-016",
+    "fact-018",
+    "fact-020",
+    "fact-021",
+    "fact-023"
+  ],
+  "rejected_facts": [
+    {
+      "id": "fact-012",
+      "reason": "The listed source returned HTTP 403 during Codex review, and the claim combines mutable third-party prices with separate Roblox product checks that are not linked in source_url."
+    },
+    {
+      "id": "fact-017",
+      "reason": "The source supports the old Rebirth 1 cost, but the claim mixes that table with a later Update 7 change; the post-update cost sequence is explicitly uncertain and should not be published as an approved fact."
+    },
+    {
+      "id": "fact-019",
+      "reason": "The listed source could not be opened reliably during Codex review, so the code-input behavior was not approved from this fact record."
+    },
+    {
+      "id": "fact-022",
+      "reason": "The single listed source supports the Discord link and its own wiki/Trello statement, but it does not by itself establish the claim about multiple outlets; the absence of a wiki or Trello is also time-sensitive."
+    }
+  ],
+  "notes": [
+    "Codex independently opened the HTTPS sources through the configured system proxy; Grok's self-reported verification was not treated as approval.",
+    "Official identity, canonical Roblox place, universe ID, and developer were cross-checked against Roblox's live game, universe, and group responses.",
+    "The minimum beginner-guide gate is exceeded: approved gameplay/progression facts include the buy-egg-cash loop, merging, offline production, Lucky Blocks, tutorial collection/deposit steps, buy and merge pads, and rebirth/reset guidance.",
+    "Facts tied to Update 7 or other mutable game state must be presented with their check date and must not be rewritten as evergreen promises.",
+    "No current promo-code list, complete chicken tier tree, complete rebirth table, or exact Gem Upgrade effects are approved."
+  ]
+}

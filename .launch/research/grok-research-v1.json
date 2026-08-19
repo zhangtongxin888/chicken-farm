@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260819-224500",
+  "game": {
+    "official_name": "Chicken Farm",
+    "domain": "chickenfarmgame.wiki",
+    "roblox_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+    "place_id": "137233438285284",
+    "universe_id": "10209534490",
+    "developer": "Skandi Studios"
+  },
+  "provider": {
+    "name": "Grok",
+    "model": "grok-4.6",
+    "generated_at": "2026-08-19T14:56:01Z"
+  },
+  "status": "complete",
+  "facts": [
+    {
+      "id": "fact-001",
+      "category": "identity",
+      "subject": "official_game",
+      "claim": "The official Roblox experience is Chicken Farm (API display name Chicken Farm 🐣), listed at /games/137233438285284/Chicken-Farm. It is a Simulation/Tycoon experience created on 2026-05-23.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-002",
+      "category": "identity",
+      "subject": "developer",
+      "claim": "Chicken Farm is created by the verified Roblox group Skandi Studios (group id 34492682). The game page credits the experience as By Skandi Studios.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-003",
+      "category": "identity",
+      "subject": "place_id",
+      "claim": "The root place ID for Chicken Farm is 137233438285284.",
+      "source_url": "https://games.roblox.com/v1/games?universeIds=10209534490",
+      "source_type": "roblox",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-004",
+      "category": "identity",
+      "subject": "universe_id",
+      "claim": "The universe ID for place 137233438285284 is 10209534490.",
+      "source_url": "https://apis.roblox.com/universes/v1/places/137233438285284/universe",
+      "source_type": "roblox",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-005",
+      "category": "identity",
+      "subject": "developer",
+      "claim": "Skandi Studios group 34492682 is a public verified group whose owner is listed as Samir (username SamirDevs, userId 359752057). The group description says joining grants in-game rewards.",
+      "source_url": "https://groups.roblox.com/v1/groups/34492682",
+      "source_type": "creator",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-006",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "The official description states the core loop: buy chickens and start farming, then convert eggs into cash.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-007",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Players merge chickens to unlock rarer chickens.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-008",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Chickens keep laying eggs while the player is away, so the farm continues producing offline.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-009",
+      "category": "progression",
+      "subject": "progression",
+      "claim": "Update 7 added Gem Upgrades that unlock at Rebirth 3, plus 2 new Lucky Blocks, 2 new Rebirths, 4 new Buy Tiers, and balance changes.",
+      "source_url": "https://www.roblox.com/games/137233438285284/Chicken-Farm",
+      "source_type": "official",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-010",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "The experience is classified as Simulation / Tycoon, with a 6-player server cap.",
+      "source_url": "https://games.roblox.com/v1/games?universeIds=10209534490",
+      "source_type": "roblox",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-011",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Paid gamepasses listed on the universe include Auto Collect Money, Auto Collect Eggs, and Double Eggs.",
+      "source_url": "https://apis.roblox.com/game-passes/v1/universes/10209534490/game-passes?pageSize=50",
+      "source_type": "roblox",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-012",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Rolimon's lists Auto Collect Money at 29 Robux, Auto Collect Eggs at 79 Robux, and Double Eggs at 499 Robux. Matching Roblox product-info endpoints for game passes 1860902878, 1862136586, and 1862365605 returned the same prices and IsForSale=true.",
+      "source_url": "https://www.rolimons.com/game/137233438285284",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    },
+    {
+      "id": "fact-013",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "A beginner session starts with a short in-farm tutorial. Eggs drop from a yellow chicken building; walking over eggs collects them. Deposit them on the Deposit Eggs pad, wait for processing shown on a brown board, then pick up cash on the Collect Cash pad.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-a-beginner-s-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-014",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Chickens are bought by stepping on Buy 1, Buy 5, Buy 25, or Buy 100 pads. Up to 3 chickens can be merged at the Merge pad into a higher-quality chicken.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-a-beginner-s-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-015",
+      "category": "gameplay",
+      "subject": "gameplay",
+      "claim": "Lucky Blocks are a source of new chickens. Secondary guides describe buying or hatching chickens from Lucky Blocks, then merging them into rarer birds that raise earnings and fill an index.",
+      "source_url": "https://www.eurogamer.net/chicken-farm-codes",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-016",
+      "category": "progression",
+      "subject": "progression",
+      "claim": "Rebirths raise the cash multiplier and unlock extra Buy tiers/items, but a normal rebirth resets cash, Processing Level, eggs, and chickens. A Robux Skip option in the Rebirth menu advances rebirth without that reset.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-rebirth-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-017",
+      "category": "progression",
+      "subject": "progression",
+      "claim": "Sportskeeda lists the first rebirth at 1,000,000 cash (x3 multiplier). Later listed costs scale into billions and above; Update 7 added two new rebirths, so later-tier numbers may have changed since that table.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-rebirth-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-018",
+      "category": "faq",
+      "subject": "faq",
+      "claim": "Promo codes are redeemed in-game through an ABX button near the top of the screen, then typing the code and pressing REDEEM. Several guides say a short tutorial must be finished before the codes UI is available.",
+      "source_url": "https://www.dexerto.com/roblox/chicken-farm-codes-3395955/",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-019",
+      "category": "mistake",
+      "subject": "mistake",
+      "claim": "Codes are case-sensitive. Extra spaces, wrong capitalization, or typos will make a code fail even if it is otherwise active.",
+      "source_url": "https://gamerant.com/chicken-farm-codes-roblox/",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-020",
+      "category": "mistake",
+      "subject": "mistake",
+      "claim": "Skipping rebirths leaves the egg-sale multiplier stagnant, which slows buying and merging higher-tier chickens.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-rebirth-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-021",
+      "category": "mistake",
+      "subject": "mistake",
+      "claim": "A normal rebirth deletes cash, eggs, chickens, and Processing Level. Rebirthing as soon as the button appears, without enough buy-back cash or without using Skip, can stall early progress.",
+      "source_url": "https://www.sportskeeda.com/roblox-news/chicken-farm-rebirth-guide",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-022",
+      "category": "faq",
+      "subject": "faq",
+      "claim": "Multiple secondary outlets point players to the Discord invite https://discord.com/invite/chickfarm for new codes, and to the Skandi Studios Roblox community for announcements. No dedicated public wiki or Trello was found.",
+      "source_url": "https://www.destructoid.com/chicken-farm-codes/",
+      "source_type": "secondary",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "medium"
+    },
+    {
+      "id": "fact-023",
+      "category": "update",
+      "subject": "update",
+      "claim": "The Roblox games API reported the universe last updated on 2026-08-18, matching an in-description Update 7 changelog.",
+      "source_url": "https://games.roblox.com/v1/games?universeIds=10209534490",
+      "source_type": "roblox",
+      "checked_at": "2026-08-19T14:56:01Z",
+      "confidence": "high"
+    }
+  ],
+  "new_player_guide": {
+    "first_10_minutes": [
+      "Join Chicken Farm by Skandi Studios (place 137233438285284) and complete the short on-farm tutorial.",
+      "Walk over eggs that roll out of the chicken building to collect them, deposit them on the Deposit Eggs pad, wait for processing, then step on Collect Cash.",
+      "Spend starting cash on Buy 1/Buy 5 chickens, then use the Merge pad to combine up to 3 chickens into a higher-quality bird.",
+      "After the tutorial, open the ABX codes button near the top of the screen and redeem any currently valid code exactly as written.",
+      "Leave the farm running: chickens keep laying while you are away."
+    ],
+    "core_loop": [
+      "Buy chickens → collect eggs → deposit/process eggs → collect cash → buy more or higher-tier chickens.",
+      "Merge chickens to unlock rarer ones that produce more valuable eggs.",
+      "Use Lucky Blocks as an extra way to obtain new chickens, then merge them.",
+      "Optional paid shortcuts: Auto Collect Eggs, Auto Collect Money, and Double Eggs gamepasses."
+    ],
+    "progression_path": [
+      "Expand the nest by buying in larger batches (Buy 1/5/25/100) as cash allows.",
+      "Merge toward rarer chickens and keep depositing eggs so cash keeps flowing.",
+      "Rebirth when you can afford the cash requirement to raise the money multiplier and unlock more Buy tiers.",
+      "Gem Upgrades unlock at Rebirth 3 (Update 7).",
+      "Update 7 also added extra Lucky Blocks, rebirths, and Buy tiers; later rebirth costs should be checked in-game."
+    ],
+    "common_mistakes": [
+      "Typing codes with the wrong case, extra spaces, or after they expire.",
+      "Trying to redeem codes before finishing the short tutorial.",
+      "Rebirthing without understanding that cash, eggs, chickens, and Processing Level reset unless you pay to Skip.",
+      "Ignoring rebirths entirely, which leaves the cash multiplier flat.",
+      "Confusing this game with unrelated Roblox titles also named Chicken Farm Tycoon."
+    ],
+    "faq": [
+      "Who made Chicken Farm? Skandi Studios (Roblox group 34492682).",
+      "Do chickens produce while offline? Yes; the official description says they keep laying while you are away.",
+      "How do I get rarer chickens? Merge chickens; Lucky Blocks can also grant new chickens.",
+      "How do I redeem codes? ABX button near the top of the screen, then REDEEM. Codes are case-sensitive.",
+      "When do Gem Upgrades unlock? At Rebirth 3, per the official Update 7 notes.",
+      "Is there an official wiki? Secondary sources report no public wiki/Trello; Discord invite chickfarm is cited instead."
+    ]
+  },
+  "keywords": {
+    "primary": [
+      "Chicken Farm",
+      "Chicken Farm Roblox",
+      "Chicken Farm wiki",
+      "Chicken Farm guide"
+    ],
+    "secondary": [
+      "Chicken Farm codes",
+      "Chicken Farm rebirth",
+      "Chicken Farm merge",
+      "Skandi Studios",
+      "Chicken Farm Lucky Blocks",
+      "Chicken Farm Gem Upgrades"
+    ],
+    "search_intent": [
+      "Chicken Farm beginner guide",
+      "how to merge chickens in Chicken Farm",
+      "Chicken Farm codes 2026",
+      "how to rebirth in Chicken Farm",
+      "Chicken Farm ABX redeem codes",
+      "Chicken Farm Gem Upgrades rebirth 3"
+    ]
+  },
+  "uncertainties": [
+    "No single live in-game code list was verified. Secondary pages disagree on which codes still work as of 2026-08-19 (for example THANKSFOR100K and 50MVisits appear often, but 666klikes, freecasssh!, earlybirds, 700klikes, adminarbuz, and others are not consistent across Eurogamer, Dexerto, Destructoid, GameRant, Sportskeeda, Rock Paper Shotgun, and PCGamesN).",
+    "Exact current chicken rarity names, merge recipes, and chicken-type count are unpublished. Sportskeeda said 'over 36 types' on 2026-07-27; Update 7 later added Buy tiers, so that count may be stale.",
+    "Full rebirth cost/multiplier table after Update 7 is unverified. Sportskeeda lists Rebirth 1 at 1,000,000 cash through Rebirth 11, but the official description says Update 7 added 2 new Rebirths.",
+    "Gem Upgrade effects, costs, and the full upgrade list are not documented outside the official 'unlock at rebirth 3' line.",
+    "Lucky Block tier names and drop tables are unclear (guides call the 50MVisits reward Lucky Block, Basic Lucky Block, or Hacker Lucky Block).",
+    "Processing Level mechanics beyond 'exists and is reset by rebirth' were not found.",
+    "Index rewards, if any, are not documented; Eurogamer only says players fill out an index.",
+    "ABX button placement is reported as top-left by Eurogamer/GameRant/Dexerto and top-right by Sportskeeda.",
+    "Exact in-game rewards for joining the Skandi Studios group are not specified beyond the group description.",
+    "No official public wiki, Trello, or developer design doc was found."
+  ],
+  "forbidden_claims": [
+    "Do not treat FunFirst Tycoons' Chicken Farm Tycoon (https://www.roblox.com/games/10868496812/Chicken-Farm-Tycoon) as this game.",
+    "Do not publish a canonical 'currently working codes' list without a fresh in-game check; secondary lists conflict.",
+    "Do not present live CCU, visits, likes, or favorites as evergreen facts.",
+    "Do not claim a complete chicken-tier list, merge tree, or Gem Upgrade list.",
+    "Do not treat Sportskeeda's later rebirth costs as official after Update 7.",
+    "Do not claim there is an official Chicken Farm wiki or Trello.",
+    "Do not invent egg values, cash-per-chicken rates, or leaderboard rewards."
+  ],
+  "suggested_topics": [
+    "First 10 minutes: collect, deposit, cash out, buy, merge",
+    "Core loop and offline egg laying",
+    "Merge pads and Buy 1/5/25/100 tiers",
+    "Lucky Blocks as a chicken source",
+    "Rebirth timing, reset risk, and Gem Upgrades at Rebirth 3",
+    "How to redeem ABX codes, with a disclaimer that codes expire",
+    "Paid gamepasses: Auto Collect Eggs, Auto Collect Money, Double Eggs",
+    "How this Chicken Farm differs from other Roblox chicken-farm titles"
+  ]
+}

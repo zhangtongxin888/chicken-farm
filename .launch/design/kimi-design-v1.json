@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260819-224500",
+  "game": {
+    "official_name": "Chicken Farm",
+    "domain": "chickenfarmgame.wiki"
+  },
+  "provider": {
+    "name": "Kimi",
+    "model": "kimi-code/k3",
+    "generated_at": "2026-08-19T15:19:34Z"
+  },
+  "research_approval_sha256": "a5504a7c8bdf1c0c874f9ce55858c1d0bd36b59d3a63bca3c3135de5c48f57d6",
+  "status": "ready_for_review",
+  "design_system": {
+    "theme": "Cheerful field-guide editorial with a tactile farm-game personality",
+    "palette": {
+      "bg": "#fff9ea",
+      "surface": "#fffdf7",
+      "text": "#253025",
+      "accent": "#ffc83d",
+      "brand": "#2f6d45",
+      "brand_dark": "#17462a",
+      "support": "#dff1d7"
+    },
+    "font_strategy": "System-first sans serif for body copy with Arial Rounded MT Bold and Trebuchet MS fallbacks for friendly display headings; no external font dependency.",
+    "spacing_scale": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "72px",
+      "104px"
+    ],
+    "responsive_rules": [
+      "Mobile at 375px uses a single-column hero, full-width CTAs, collapsible navigation, one-column cards, and simplified scene scale.",
+      "Tablet at 768px uses a single-column hero with two-column content cards where space permits and a non-sticky guide contents block.",
+      "Desktop at 1440px uses a 1160px content shell, two-column hero, four-column core loop, and sticky beginner-guide contents.",
+      "All tap targets are at least 44px high, page content does not rely on hover, and reduced-motion preferences disable animated transitions."
+    ]
+  },
+  "homepage": {
+    "hero": {
+      "headline": "Build a smarter flock, one merge at a time.",
+      "subheadline": "Learn the buy-egg, earn-cash, and merge loop without wading through guesses. Follow a calm first-session route, then plan offline production and rebirth with confidence.",
+      "primary_cta": {
+        "label": "Start the beginner guide",
+        "target": "/beginner-guide/"
+      },
+      "secondary_cta": {
+        "label": "See the 4-step loop",
+        "target": "#core-loop"
+      }
+    },
+    "sections": [
+      {
+        "id": "core-loop",
+        "title": "Four moves that keep your farm growing",
+        "purpose": "Explain the buy, build, merge, collect, and reinvest rhythm in scan-friendly cards."
+      },
+      {
+        "id": "progression",
+        "title": "Grow in layers, not in a rush",
+        "purpose": "Connect tutorial pads, the repeatable loop, offline production, Lucky Blocks, and cautious rebirth planning."
+      },
+      {
+        "id": "mistakes",
+        "title": "Three shortcuts that usually create confusion",
+        "purpose": "Warn against skipping deposit, rushing rebirth, and trusting unverified or stale lists."
+      },
+      {
+        "id": "faq",
+        "title": "Chicken Farm FAQ",
+        "purpose": "Answer five beginner questions while routing readers back to the internal tutorial."
+      },
+      {
+        "id": "beginner-close",
+        "title": "Ready to hatch your first plan?",
+        "purpose": "Close with a second natural internal link to the beginner guide."
+      }
+    ]
+  },
+  "page_map": [
+    {
+      "path": "/",
+      "purpose": "SEO-led homepage and visual overview of the core loop, progression route, common mistakes, and FAQ."
+    },
+    {
+      "path": "/beginner-guide/",
+      "purpose": "Interactive five-step first-session checklist with persistent device-local progress and supporting tips."
+    }
+  ],
+  "components": [
+    "Sticky responsive navigation",
+    "Primary and secondary CTA pair",
+    "CSS-only hero farm scene",
+    "Four-card core loop",
+    "Progression route line",
+    "Common-mistake cards",
+    "Native accessible FAQ accordions",
+    "Device-local beginner checklist",
+    "Responsive closing CTA",
+    "Shared factual-review notice and footer"
+  ],
+  "assets": [
+    {
+      "type": "visual-treatment",
+      "description": "Farm scene, egg mark, background pattern, and decorative shapes are built entirely with candidate-authored CSS; no third-party image files are used.",
+      "source": "candidate-authored CSS",
+      "license": "Original for this candidate"
+    },
+    {
+      "type": "icons",
+      "description": "Unicode emoji are used as small illustrative labels in the core-loop cards.",
+      "source": "platform-rendered Unicode",
+      "license": "No bundled media asset"
+    }
+  ],
+  "approved_fact_ids_used": [
+    "fact-001",
+    "fact-002",
+    "fact-003",
+    "fact-004",
+    "fact-005",
+    "fact-006",
+    "fact-007",
+    "fact-008",
+    "fact-009",
+    "fact-010",
+    "fact-011",
+    "fact-013",
+    "fact-014",
+    "fact-015",
+    "fact-016",
+    "fact-018",
+    "fact-020",
+    "fact-021",
+    "fact-023"
+  ],
+  "fact_usage_policy": {
+    "review_date_label": "Facts reviewed August 19, 2026",
+    "excluded_claims": [
+      "Current promo-code list",
+      "Complete chicken tier tree",
+      "Complete rebirth table or exact rebirth costs",
+      "Exact Gem Upgrade effects",
+      "Any evergreen promise based on mutable Update 7 details"
+    ],
+    "copy_guardrails": [
+      "Use the in-game reset summary as the source of current rebirth effects and costs.",
+      "Describe approved mechanics without inventing exact rates, prices, timers, or tier names.",
+      "Keep mutable-game disclaimers visible on both pages."
+    ]
+  },
+  "files_changed": [
+    "package.json",
+    "public/app.js",
+    "public/index.html",
+    "public/styles.css",
+    "public/beginner-guide/index.html",
+    "src/server.mjs",
+    "src/validate.mjs",
+    ".launch/design/kimi-design-v1.json"
+  ],
+  "validation_targets": {
+    "viewports": [
+      375,
+      768,
+      1440
+    ],
+    "primary_cta_is_internal": true,
+    "primary_cta_target": "/beginner-guide/",
+    "keyboard_support": [
+      "Skip links",
+      "Visible focus states",
+      "Native details and summary FAQ controls",
+      "Labeled checklist inputs",
+      "Labeled mobile menu button"
+    ]
+  },
+  "preview_command": "npm run dev"
+}

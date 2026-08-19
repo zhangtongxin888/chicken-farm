@@ -1,0 +1,13 @@
+{
+  "name": "chicken-farm-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.mjs",
+    "audit:design": "node src/design-audit.mjs",
+    "lint": "node src/lint.mjs",
+    "test": "node src/test.mjs",
+    "build": "node src/validate.mjs"
+  }
+}
