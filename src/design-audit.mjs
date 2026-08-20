@@ -27,16 +27,16 @@ const sharedChecks = {
   skip_link: hasAll(home, ['class="skip-link"', 'href="#main"']),
   primary_cta_internal: home.includes('class="button button-primary" href="/beginner-guide/"'),
   primary_cta_larger_than_secondary:
-    css.includes(".button-primary") && css.includes("min-height: 58px") && css.includes(".button-secondary") && css.includes("min-height: 48px"),
+    css.includes(".button-primary") && css.includes("min-height: 62px") && css.includes(".button-secondary") && css.includes("min-height: 50px"),
   mobile_menu_accessible: hasAll(home, ["aria-label=\"Open navigation\"", "aria-expanded=\"false\"", "data-menu-button"]),
   keyboard_focus_visible: css.includes(":focus-visible"),
   reduced_motion: css.includes("prefers-reduced-motion"),
   faq_native_controls: home.includes("<details>") && home.includes("<summary>"),
-  checklist_labels: guide.includes('aria-label="Mark buy your first chicken complete"'),
+  checklist_labels: guide.includes('aria-label="Mark finish the on-farm tutorial complete"'),
   internal_navigation_loop:
-    home.includes('href="/beginner-guide/"') && guide.includes('href="/"') && guide.includes('href="/#core-loop"'),
-  text_contrast: Number(contrast("#253025", "#fff9ea").toFixed(2)),
-  light_on_dark_contrast: Number(contrast("#ffffff", "#17462a").toFixed(2)),
+    home.includes('href="/beginner-guide/"') && guide.includes('href="/"') && home.includes('href="/codes/"') && home.includes('href="/faq/"'),
+  text_contrast: Number(contrast("#35261a", "#fdf4de").toFixed(2)),
+  light_on_dark_contrast: Number(contrast("#ffffff", "#1b3a2b").toFixed(2)),
 };
 
 const viewports = [
@@ -66,7 +66,7 @@ const viewports = [
     mode: "desktop",
     checks: {
       bounded_content_width: css.includes("--content: min(1160px, calc(100% - 40px))"),
-      two_column_hero: css.includes("grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.8fr)"),
+      two_column_hero: css.includes("grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.86fr)"),
       four_column_loop: css.includes("grid-template-columns: repeat(4, 1fr)"),
       sticky_guide_contents: css.includes("position: sticky") && css.includes("top: 104px"),
     },

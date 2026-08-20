@@ -6,6 +6,12 @@ const canonicalOrigin = "https://chickenfarmgame.wiki";
 const pages = new Map([
   ["/", "public/index.html"],
   ["/beginner-guide/", "public/beginner-guide/index.html"],
+  ["/codes/", "public/codes/index.html"],
+  ["/rebirth/", "public/rebirth/index.html"],
+  ["/merge/", "public/merge/index.html"],
+  ["/gamepasses/", "public/gamepasses/index.html"],
+  ["/updates/", "public/updates/index.html"],
+  ["/faq/", "public/faq/index.html"],
 ]);
 const requiredFiles = [
   ...pages.values(),
@@ -85,6 +91,19 @@ for (const forbidden of [
   /50MVisits/i,
   /complete chicken tier/i,
   /official Chicken Farm wiki/i,
+  /matching chickens/i,
+  /full formula/i,
+  /under a minute/i,
+  /most likely expired/i,
+  /codes expire/i,
+  /without resetting anything/i,
+  /smaller flock[^.]*outearns/i,
+  /none (?:of them|is) required/i,
+  /collects your cash automatically/i,
+  /collects eggs automatically instead/i,
+  /doubles egg output/i,
+  /announcements as they drop/i,
+  /reset rules that do not change/i,
 ]) {
   if (forbidden.test(combinedHtml)) fail(`Published copy contains an excluded or unapproved claim: ${forbidden}`);
 }

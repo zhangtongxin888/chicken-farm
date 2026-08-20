@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "run_id": "chicken-farm-20260820-043000",
+  "game": {
+    "official_name": "Chicken Farm",
+    "domain": "chickenfarmgame.wiki"
+  },
+  "provider": {
+    "name": "Kimi",
+    "model": "kimi-code/k3",
+    "generated_at": "2026-08-20T03:05:00Z"
+  },
+  "research_approval_sha256": "ecbad337524b93f22dd4d04b21505648d2f41eb370589a6b4225608d5179e4f7",
+  "status": "ready_for_review",
+  "supersedes": ".launch/design/kimi-design-v2.json",
+  "design_system": {
+    "theme": "Sunny Coop v3 — same chunky farming-sim visual language as v2, scaled from a 2-page thin guide into an 8-page content site (~3x content)",
+    "kept_from_v2": [
+      "Saturated farm palette (sky blue hero gradient, barn red, hay yellow, pasture green, deep brown ink)",
+      "Chunky game-UI components: 2-3px ink borders, hard offset shadows, pressed-state buttons, pill badges",
+      "Layered animated CSS hero farm scene on the homepage",
+      "Night-farm dark progression section with LV chips",
+      "Wrap-safe highlighter headline treatment"
+    ],
+    "new_in_v3": [
+      "Page-hero component for subpages: sky gradient, centered badge/headline/copy, primary CTA to #quick-start, meta chips with check dates",
+      "Chunky .fact-table pattern (hay-yellow header, rounded bordered wrapper, horizontal scroll only inside the wrapper on small screens)",
+      "Numbered .steps-list pattern for redeem/rebirth sequences",
+      ".callout and .callout-warn dashed policy boxes used for 'why no list' honesty blocks",
+      ".dir-card directory grid turning the homepage into a hub for all system pages",
+      ".update-band spotlight card for Update 7 on the homepage",
+      "Feature grids reused across subpages for advice cards"
+    ],
+    "font_strategy": "System-first sans for body (Inter stack) with Arial Rounded MT Bold / Trebuchet MS fallbacks for chunky display headings; no external font dependency.",
+    "responsive_rules": [
+      "375px: single column everywhere, full-width CTAs, hamburger nav, scene scaled with small decorations hidden, tables scroll inside their wrapper only (page itself never scrolls horizontally)",
+      "768px: single-column hero, two-column card grids, non-sticky guide contents",
+      "1440px: 1160px content shell, two-column hero, three/four-column grids",
+      "html/body use overflow-x: clip; verified scrollWidth === viewport width at 375/768/1440 on all 8 pages via headless browser",
+      "prefers-reduced-motion disables animations and smooth scroll"
+    ]
+  },
+  "homepage": {
+    "hero": {
+      "badge": "Roblox · Simulation / Tycoon · by Skandi Studios",
+      "headline": "From one chicken to a money-making farm.",
+      "primary_cta": {
+        "label": "Start the beginner guide →",
+        "target": "/beginner-guide/",
+        "is_internal": true
+      },
+      "secondary_cta": {
+        "label": "See the core loop",
+        "target": "#core-loop"
+      }
+    },
+    "sections": [
+      {"id": "explore", "title": "Every system, one page each.", "purpose": "Directory grid linking to all six system pages plus the beginner guide."},
+      {"id": "core-loop", "title": "Every coin starts as an egg.", "purpose": "Four-move loop using approved pad mechanics."},
+      {"id": "update-band", "title": "Update 7 is the current chapter.", "purpose": "Spotlight card linking to the updates page, dated Aug 20, 2026."},
+      {"id": "progression", "title": "Level up your farm in four stages.", "purpose": "LV.01-LV.04 route on the dark section."},
+      {"id": "mistakes", "title": "Four ways new farmers stall.", "purpose": "Early Lucky Blocks, never rebirthing, codes before tutorial, stale lists."},
+      {"id": "faq", "title": "Chicken Farm FAQ.", "purpose": "Four teaser accordions linking to the full /faq/ page."}
+    ]
+  },
+  "page_map": [
+    {"path": "/", "purpose": "Hub: hero, directory of all pages, core loop, Update 7 band, progression, mistakes, FAQ teaser."},
+    {"path": "/beginner-guide/", "purpose": "First 10 minutes: 5-step localStorage checklist enriched with pad details, plus next-reads and beginner FAQ."},
+    {"path": "/codes/", "purpose": "ABX redeem steps, case-sensitivity, tutorial gate, why no code table is published, where fresh codes appear."},
+    {"path": "/rebirth/", "purpose": "What rebirth does, normal-vs-Skip reset table, Gem Upgrades at Rebirth 3, why no cost table, timing mistakes."},
+    {"path": "/merge/", "purpose": "Farm pad map table, why rarer chickens matter, Lucky Block mechanics and beginner-skip advice."},
+    {"path": "/gamepasses/", "purpose": "Official 3-pass catalog with prices checked 2026-08-20, who each pass suits, free alternatives."},
+    {"path": "/updates/", "purpose": "Update 7 changelog in plain language, what the site refuses to publish, where update news appears first."},
+    {"path": "/faq/", "purpose": "Game identity card (IDs, developer, genre, server size) plus grouped gameplay/codes/community accordions including the Chicken Farm Tycoon distinction."}
+  ],
+  "approved_fact_ids_used": [
+    "fact-001", "fact-002", "fact-003", "fact-004", "fact-005", "fact-007", "fact-008", "fact-009",
+    "fact-010", "fact-011", "fact-013", "fact-017", "fact-018", "fact-019", "fact-020", "fact-022",
+    "fact-023", "fact-024", "fact-025", "fact-026", "fact-027", "fact-028", "fact-029", "fact-030",
+    "fact-032", "fact-033", "fact-034", "fact-035", "fact-042", "fact-043", "fact-045", "fact-046",
+    "fact-052", "fact-054", "fact-055", "fact-057", "fact-059", "fact-060", "fact-061", "fact-062",
+    "fact-063", "fact-066", "fact-068", "fact-069", "fact-071", "fact-072", "fact-075"
+  ],
+  "fact_usage_policy": {
+    "review_date_label": "Facts checked August 20, 2026",
+    "mutable_data_rule": "Game-pass prices, Update 7 contents, code behavior, Lucky Block details, rebirth/reset/Skip behavior, and group rewards are always shown with the 2026-08-20 check date and an in-game confirmation prompt.",
+    "excluded_claims": [
+      "Any current promo-code string or table (no code list is approved)",
+      "Any rebirth cost/multiplier number or cap (conflicting tables rejected)",
+      "Complete chicken tier tree or chicken count",
+      "Gem Upgrade effects or costs beyond the Rebirth 3 unlock",
+      "Live CCU, visits, votes, or member counts",
+      "Event schedules (ADMIN ABUSE listing rejected)",
+      "Roblox badges absence claim (rejected)"
+    ],
+    "external_links": "Only the official Roblox game page is linked; the Discord invite is mentioned as plain text, never as a URL."
+  },
+  "files_changed": [
+    "public/index.html",
+    "public/beginner-guide/index.html",
+    "public/codes/index.html",
+    "public/rebirth/index.html",
+    "public/merge/index.html",
+    "public/gamepasses/index.html",
+    "public/updates/index.html",
+    "public/faq/index.html",
+    "public/styles.css",
+    "public/sitemap.xml",
+    "src/lint.mjs",
+    "src/test.mjs",
+    "src/design-audit.mjs",
+    ".launch/design/kimi-design-v3.json"
+  ],
+  "validation_targets": {
+    "viewports": [375, 768, 1440],
+    "no_horizontal_scroll": true,
+    "primary_cta_is_internal": true,
+    "primary_cta_target": "/beginner-guide/ or #quick-start",
+    "checks_run": [
+      "npm run build (lint: 8 pages, metadata, links, facts, sitemap; tests: 14 route/asset checks) — passed",
+      "npm run audit:design (static viewport/design audit, updated for v3) — passed",
+      "Headless browser: scrollWidth === innerWidth for all 8 pages at 375, 768, 1440 (24/24) — passed",
+      "Screenshots: .launch/design/v3-home-1440.jpeg, v3-gamepasses-375.jpeg, v3-rebirth-375.jpeg"
+    ]
+  },
+  "preview_command": "python3 -m http.server 4173 --directory public"
+}

@@ -1,48 +1,81 @@
 {
   "schema_version": 1,
-  "run_id": "chicken-farm-20260819-224500",
+  "run_id": "chicken-farm-20260820-043000",
   "game": {
     "official_name": "Chicken Farm",
     "domain": "chickenfarmgame.wiki"
   },
   "reviewed_by": "Codex",
-  "reviewed_at": "2026-08-19T18:10:54Z",
+  "reviewed_at": "2026-08-20T04:29:36Z",
   "design_package": {
-    "path": ".launch/design/kimi-design-v1.json",
-    "sha256": "030b09151d3edce12f4621ad3ada0cc55a975ee37a33b88d83b3ba670cc071ff",
+    "path": ".launch/design/kimi-design-v3.json",
+    "sha256": "24a6c8814c2e30663a00b969758dcb35347ba1c7e1a82c524dc216d2c103326b",
     "provider": "Kimi",
     "model": "kimi-code/k3"
+  },
+  "research_approval": {
+    "path": ".launch/research/research-approved.json",
+    "sha256": "ecbad337524b93f22dd4d04b21505648d2f41eb370589a6b4225608d5179e4f7"
   },
   "status": "approved",
   "review_method": {
     "handoff_validator": "passed",
-    "viewport_method": "Formal-domain visual inspection in an isolated agent-browser session at 375x900, 768x1024, and 1440x900",
-    "browser_visual_check": "Passed on https://chickenfarmgame.wiki/ after DNS and TLS activation; no horizontal overflow was observed and the primary CTA was clicked through to the internal beginner guide."
+    "viewport_method": "Browser layout audit of all 8 formal-source pages at 375, 768, and 1440 CSS pixels, plus static accessibility and responsive checks",
+    "browser_visual_check": "All 24 route-width combinations matched the intended canonical URL and had scrollWidth equal to clientWidth. The final gamepasses page was also visually inspected at 375px after factual corrections."
   },
   "viewport_checks": {
     "375": {
       "result": "pass",
+      "routes_checked": [
+        "/",
+        "/beginner-guide/",
+        "/codes/",
+        "/rebirth/",
+        "/merge/",
+        "/gamepasses/",
+        "/updates/",
+        "/faq/"
+      ],
       "evidence": [
-        "Formal homepage rendered at 375x900 with scrollWidth equal to viewport width (375px).",
-        "Hero copy, illustration transition, and both calls to action were legible without clipping.",
-        "Navigation collapsed behind a labeled 44px menu control.",
-        "The largest visible clickable was Start the beginner guide, targeting /beginner-guide/."
+        "Every page reported clientWidth=375 and scrollWidth=375.",
+        "Single-column layouts, full-width calls to action, collapsed navigation, tables, and long catalog IDs remained usable.",
+        "The homepage primary button is 62px tall and links to /beginner-guide/; the secondary button is 50px tall."
       ]
     },
     "768": {
       "result": "pass",
+      "routes_checked": [
+        "/",
+        "/beginner-guide/",
+        "/codes/",
+        "/rebirth/",
+        "/merge/",
+        "/gamepasses/",
+        "/updates/",
+        "/faq/"
+      ],
       "evidence": [
-        "Formal homepage rendered at 768x1024 with scrollWidth equal to viewport width (768px).",
-        "Tablet navigation, hero copy, calls to action, and farm illustration were fully visible without overlap.",
-        "The largest visible clickable was Start the beginner guide, targeting /beginner-guide/."
+        "Every page reported clientWidth=768 and scrollWidth=768.",
+        "Tablet card grids and page heroes rendered without overlap or horizontal overflow.",
+        "The beginner-guide contents panel correctly switches out of sticky desktop behavior."
       ]
     },
     "1440": {
       "result": "pass",
+      "routes_checked": [
+        "/",
+        "/beginner-guide/",
+        "/codes/",
+        "/rebirth/",
+        "/merge/",
+        "/gamepasses/",
+        "/updates/",
+        "/faq/"
+      ],
       "evidence": [
-        "Formal homepage rendered at 1440x900 with scrollWidth equal to viewport width (1440px).",
-        "The two-column hero, bounded content, navigation, calls to action, and farm illustration were fully visible without overlap.",
-        "The largest visible clickable was Start the beginner guide; clicking it reached https://chickenfarmgame.wiki/beginner-guide/."
+        "Every page reported clientWidth=1440 and scrollWidth=1440.",
+        "The homepage kept its bounded two-column hero and multi-column content grids.",
+        "Navigation, calls to action, tables, cards, and the sticky guide contents rendered without overlap."
       ]
     }
   },
@@ -55,75 +88,128 @@
   },
   "accessibility_checks": {
     "result": "pass",
-    "body_text_contrast_ratio": 13.08,
-    "light_on_dark_contrast_ratio": 10.79,
+    "body_text_contrast_ratio": 13.28,
+    "light_on_dark_contrast_ratio": 12.45,
     "checks": [
       "Visible keyboard focus states",
-      "Skip links on both pages",
-      "Labeled menu and checklist controls",
+      "Skip links on all pages",
+      "Labeled mobile menu and checklist controls",
       "Native details/summary FAQ controls",
       "Reduced-motion support",
-      "No hover-only content"
+      "No hover-only content",
+      "Scrollable table wrappers at narrow widths"
     ]
   },
   "navigation_checks": {
     "result": "pass",
     "routes": [
       "/",
-      "/beginner-guide/"
+      "/beginner-guide/",
+      "/codes/",
+      "/rebirth/",
+      "/merge/",
+      "/gamepasses/",
+      "/updates/",
+      "/faq/"
     ],
-    "notes": "All internal links and fragments are checked by src/lint.mjs; the beginner guide links back to the homepage sections."
+    "notes": "src/lint.mjs verifies every internal route and fragment, one canonical per page, and exact sitemap-to-route parity."
   },
   "fact_reference_checks": {
     "result": "pass",
     "approved_fact_ids_used": [
       "fact-001",
       "fact-002",
-      "fact-006",
+      "fact-003",
+      "fact-004",
+      "fact-005",
       "fact-007",
       "fact-008",
+      "fact-009",
       "fact-010",
+      "fact-011",
       "fact-013",
-      "fact-014",
-      "fact-015",
-      "fact-016",
+      "fact-017",
+      "fact-018",
+      "fact-019",
       "fact-020",
-      "fact-021"
+      "fact-022",
+      "fact-023",
+      "fact-024",
+      "fact-025",
+      "fact-026",
+      "fact-027",
+      "fact-028",
+      "fact-029",
+      "fact-030",
+      "fact-032",
+      "fact-033",
+      "fact-034",
+      "fact-035",
+      "fact-042",
+      "fact-043",
+      "fact-045",
+      "fact-046",
+      "fact-052",
+      "fact-054",
+      "fact-055",
+      "fact-057",
+      "fact-059",
+      "fact-060",
+      "fact-061",
+      "fact-062",
+      "fact-063",
+      "fact-066",
+      "fact-068",
+      "fact-069",
+      "fact-071",
+      "fact-072",
+      "fact-075"
     ],
     "rejected_fact_ids_used": [],
-    "notes": "Published copy excludes current code lists, exact rebirth costs, complete chicken tiers, and exact Gem Upgrade effects."
+    "notes": "Codex removed content derived from rejected facts 073 and 074, plus unapproved assertions about matching chickens, code timing and failure causes, gamepass behavior and value, broad Robux Skip resets, and cross-rarity earnings comparisons."
   },
   "asset_license_checks": {
     "result": "pass",
     "assets": [
       {
         "path": "public/og.png",
-        "source": "OpenAI built-in image generation for this project",
+        "source": "Existing project-generated social preview asset",
         "license_status": "Original generated asset; no third-party image source",
         "sha256": "82dd31b0941850baac94de7b4e942c0f12db3e603dafeb9787cdbba6ebc07f6a"
       },
       {
         "path": "public/styles.css",
-        "source": "Kimi candidate plus Codex production review",
-        "license_status": "Original CSS illustration; no third-party image source"
+        "source": "Kimi v3 candidate with Codex production review",
+        "license_status": "Original CSS illustration and interface styling; no third-party image source"
       }
     ]
   },
   "issues_and_resolutions": [
     {
-      "issue": "The candidate called the first purchase an egg even though approved research says players buy chickens and convert eggs into cash.",
-      "resolution": "Codex corrected homepage and tutorial copy to buy a chicken, collect and deposit eggs, then collect cash."
+      "issue": "The Kimi design package run_id differed from the approved research run_id.",
+      "resolution": "Only design.run_id was changed to chicken-farm-20260820-043000, after which validate_handoffs passed."
     },
     {
-      "issue": "The candidate lacked production SEO files and a social preview image.",
-      "resolution": "Codex added canonical metadata, Open Graph/Twitter metadata, JSON-LD, robots.txt, sitemap.xml, security headers, and an original social card."
+      "issue": "The candidate included rejected or expanded factual claims across rebirth, updates, beginner, codes, gamepasses, and merge content.",
+      "resolution": "Codex rewrote those passages to the exact approved fact set and added lint guards for the rejected wording."
     },
     {
-      "issue": "The initial acceptance record was limited to static viewport checks because the browser lock was unavailable.",
-      "resolution": "The authorized retry completed formal-domain visual checks at 375, 768, and 1440 pixels in an isolated browser session; the primary CTA was confirmed as an internal beginner-guide entry."
+      "issue": "The candidate HTTP test used a fixed port and asserted one raw headline substring.",
+      "resolution": "Codex made the test reserve an available local port and assert the stable internal beginner-guide entry instead of span-sensitive headline text."
+    },
+    {
+      "issue": "The candidate directory also contained old acceptance packages, v1/v2 packages, Playwright artifacts, screenshots, and cross-site logs.",
+      "resolution": "None of those files were integrated; only the v3 public pages, stylesheet, sitemap, and corrected test modules were accepted."
     }
   ],
+  "preserved_production_files": [
+    "public/app.js",
+    "public/og.png",
+    "public/robots.txt",
+    "vercel.json"
+  ],
   "automated_checks": {
+    "validate_handoffs": "passed",
     "npm_run_audit_design": "passed",
     "npm_run_lint": "passed",
     "npm_test": "passed",

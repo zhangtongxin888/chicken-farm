@@ -1,56 +1,183 @@
 {
   "schema_version": 1,
-  "run_id": "chicken-farm-20260819-224500",
+  "run_id": "chicken-farm-20260820-043000",
   "game": {
     "official_name": "Chicken Farm",
     "domain": "chickenfarmgame.wiki"
   },
   "reviewed_by": "Codex",
-  "reviewed_at": "2026-08-19T15:03:25Z",
+  "reviewed_at": "2026-08-20T02:35:42Z",
   "approved_fact_ids": [
     "fact-001",
     "fact-002",
     "fact-003",
     "fact-004",
     "fact-005",
-    "fact-006",
     "fact-007",
     "fact-008",
     "fact-009",
     "fact-010",
     "fact-011",
     "fact-013",
-    "fact-014",
-    "fact-015",
-    "fact-016",
+    "fact-017",
     "fact-018",
+    "fact-019",
     "fact-020",
-    "fact-021",
-    "fact-023"
+    "fact-022",
+    "fact-023",
+    "fact-024",
+    "fact-025",
+    "fact-026",
+    "fact-027",
+    "fact-028",
+    "fact-029",
+    "fact-030",
+    "fact-032",
+    "fact-033",
+    "fact-034",
+    "fact-035",
+    "fact-042",
+    "fact-043",
+    "fact-045",
+    "fact-046",
+    "fact-052",
+    "fact-054",
+    "fact-055",
+    "fact-057",
+    "fact-059",
+    "fact-060",
+    "fact-061",
+    "fact-062",
+    "fact-063",
+    "fact-066",
+    "fact-068",
+    "fact-069",
+    "fact-071",
+    "fact-072",
+    "fact-075"
   ],
   "rejected_facts": [
     {
+      "id": "fact-006",
+      "reason": "The live group API returned 1,536,560 members during Codex review, not 1,536,393; this mutable snapshot had already drifted."
+    },
+    {
       "id": "fact-012",
-      "reason": "The listed source returned HTTP 403 during Codex review, and the claim combines mutable third-party prices with separate Roblox product checks that are not linked in source_url."
+      "reason": "The claim combines a stable creation timestamp with a mutable last-updated timestamp and an inferred changelog match; it is unnecessary for the guide and must not become evergreen copy."
     },
     {
-      "id": "fact-017",
-      "reason": "The source supports the old Rebirth 1 cost, but the claim mixes that table with a later Update 7 change; the post-update cost sequence is explicitly uncertain and should not be published as an approved fact."
+      "id": "fact-014",
+      "reason": "The Roblox page opened, but its dynamic maturity, voice-chat, and camera fields could not all be independently recovered from the cited page during review."
     },
     {
-      "id": "fact-019",
-      "reason": "The listed source could not be opened reliably during Codex review, so the code-input behavior was not approved from this fact record."
+      "id": "fact-015",
+      "reason": "The live API had already changed to 17,469 playing, 84,222,508 visits, and 311,518 favorites during review, so the packet snapshot is stale."
     },
     {
-      "id": "fact-022",
-      "reason": "The single listed source supports the Discord link and its own wiki/Trello statement, but it does not by itself establish the claim about multiple outlets; the absence of a wiki or Trello is also time-sensitive."
+      "id": "fact-016",
+      "reason": "The live votes endpoint had already changed to 937,737 up-votes and 9,414 down-votes during review, so the packet snapshot is stale."
+    },
+    {
+      "id": "fact-021",
+      "reason": "The badges endpoint was empty at review time, but the claim turns a mutable empty snapshot into a durable absence; do not publish it as evergreen."
+    },
+    {
+      "id": "fact-031",
+      "reason": "The chicken-count claim predates Update 7 and the source itself cannot establish the current total; the packet correctly flags it as stale."
+    },
+    {
+      "id": "fact-036",
+      "reason": "The listed AllThings.How source returned HTTP 403 during independent review, so the UI claim was not approved from this record."
+    },
+    {
+      "id": "fact-037",
+      "reason": "The listed source returned HTTP 403, and its Rebirth 8 cap conflicts with another dated table and with the later official update."
+    },
+    {
+      "id": "fact-038",
+      "reason": "The cited community tables disagree on both the first rebirth cost and multiplier; no conflicting rebirth number is approved."
+    },
+    {
+      "id": "fact-039",
+      "reason": "This is a pre-Update-7 rebirth table whose later rows and current cap are explicitly unverified."
+    },
+    {
+      "id": "fact-040",
+      "reason": "The listed source returned HTTP 403 and the table contains TBC estimates, so none of these rebirth numbers passed review."
+    },
+    {
+      "id": "fact-041",
+      "reason": "The listed source returned HTTP 403 and the claim is community strategy commentary rather than a verified mechanic."
+    },
+    {
+      "id": "fact-044",
+      "reason": "The button-position reports conflict, and the cited URL does not substantiate the separate Sportskeeda placement claim; use only the general ABX/top-HUD instruction from approved facts."
+    },
+    {
+      "id": "fact-047",
+      "reason": "No code was redeemed in-game or confirmed from the live Discord, and same-day secondary code lists conflict; no current code string or reward is approved."
+    },
+    {
+      "id": "fact-048",
+      "reason": "This broader secondary code list conflicts with other same-day lists and was not confirmed in-game or in the live Discord."
+    },
+    {
+      "id": "fact-049",
+      "reason": "The cited list is older and directly conflicts with a later source about whether 700klikes is active."
+    },
+    {
+      "id": "fact-050",
+      "reason": "This dated code snapshot differs from newer sources and was not confirmed in-game; it cannot be treated as a current list."
+    },
+    {
+      "id": "fact-051",
+      "reason": "Same-day sources disagree on the expired set, so the conflicting status table is not approved."
+    },
+    {
+      "id": "fact-053",
+      "reason": "The limited-use behavior was found only in a secondary article and was not independently confirmed in the live Discord or game."
+    },
+    {
+      "id": "fact-056",
+      "reason": "The reset mechanics are supported, but the claimed buy-back-cash stall is an editorial inference rather than a directly sourced rule."
+    },
+    {
+      "id": "fact-058",
+      "reason": "The event schedule is highly mutable and the exact listing could not be independently recovered from the dynamic Roblox page during review."
+    },
+    {
+      "id": "fact-064",
+      "reason": "The secondary source supports its own wiki/Trello statement, but the broader absence claim and the status of similarly named third-party sites were not exhaustively verified."
+    },
+    {
+      "id": "fact-065",
+      "reason": "The Lucky Block reward name is unresolved across sources (Basic, Hacker, or generic); no specific rarity is approved."
+    },
+    {
+      "id": "fact-067",
+      "reason": "The official source supports four Update 7 buy tiers, but the compound claim also relies on an inaccessible secondary source for two tiers per rebirth."
+    },
+    {
+      "id": "fact-070",
+      "reason": "This is an editorial warning rather than a game fact; its safety rule is captured in notes, and no live code table is approved."
+    },
+    {
+      "id": "fact-073",
+      "reason": "The source supports Processing Level reset/retention behavior, but it does not establish the broader claim that no full formula is published anywhere."
+    },
+    {
+      "id": "fact-074",
+      "reason": "The secondary article reports how Discord messages are maintained, but that behavior was not confirmed from the live Discord itself."
     }
   ],
   "notes": [
-    "Codex independently opened the HTTPS sources through the configured system proxy; Grok's self-reported verification was not treated as approval.",
-    "Official identity, canonical Roblox place, universe ID, and developer were cross-checked against Roblox's live game, universe, and group responses.",
-    "The minimum beginner-guide gate is exceeded: approved gameplay/progression facts include the buy-egg-cash loop, merging, offline production, Lucky Blocks, tutorial collection/deposit steps, buy and merge pads, and rebirth/reset guidance.",
-    "Facts tied to Update 7 or other mutable game state must be presented with their check date and must not be rewritten as evergreen promises.",
-    "No current promo-code list, complete chicken tier tree, complete rebirth table, or exact Gem Upgrade effects are approved."
+    "v2 contains 75 facts versus 23 in v1: 52 additional facts, about 3.26 times the v1 package. This review approved 47 and rejected 28.",
+    "Categories cleared for page use are official identity and IDs, developer/group identity, the beginner buy-chickens to collect-eggs to deposit/process to collect-cash loop, merging and offline production, basic Lucky Block guidance, general rebirth/reset/Skip guidance without a numeric table, dated code-redemption instructions without a code list, and the official game-pass catalog.",
+    "The minimum gate is exceeded: official_game, developer, place_id, and universe_id are approved, along with well over three independently checked beginner gameplay/progression facts.",
+    "Any page use of Update 7 details, Lucky Block behavior, rebirth/reset/Skip behavior, Processing Level, codes UI/tutorial availability, group rewards, or game-pass prices and sale status must say checked 2026-08-20 and '以游戏内为准'.",
+    "Game-pass names and prices were independently rechecked against the official Roblox catalog on 2026-08-20. Prices and sale status are mutable and must never be presented without that check date and an in-game/catalog recheck prompt.",
+    "No current promo-code table is approved. Codes, CCU, visits, votes, member counts, event schedules, and rebirth cost/cap tables are mutable; any future refreshed use must show an explicit check date and source and must not be written as evergreen content.",
+    "AllThings.How returned HTTP 403 during Codex review, so facts relying on that page were rejected. Conflicting code rewards, Lucky Block rarity names, and rebirth numbers remain uncertain and must be labeled '以游戏内为准' if mentioned only as uncertainty.",
+    "A complete chicken tree, egg-value table, rebirth table, and Gem Upgrade effects/cost table are not approved. The only approved Gem Upgrade claim is the official Update 7 statement that they unlock at Rebirth 3, dated 2026-08-20 and subject to the live game."
   ]
 }
