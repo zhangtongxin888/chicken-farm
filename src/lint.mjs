@@ -87,8 +87,6 @@ for (const [sourceRoute, html] of htmlByRoute) {
 const combinedHtml = [...htmlByRoute.values()].join("\n");
 for (const forbidden of [
   /1,000,000/,
-  /THANKSFOR100K/i,
-  /50MVisits/i,
   /complete chicken tier/i,
   /official Chicken Farm wiki/i,
   /matching chickens/i,
@@ -106,6 +104,17 @@ for (const forbidden of [
   /reset rules that do not change/i,
 ]) {
   if (forbidden.test(combinedHtml)) fail(`Published copy contains an excluded or unapproved claim: ${forbidden}`);
+}
+
+// Codes table rule (2026-10-01): a code may appear in the working table only when
+// at least three separate trackers list it as active.
+const codesHtml = htmlByRoute.get("/codes/");
+const workingSection = codesHtml.slice(codesHtml.indexOf('id="working-codes"'), codesHtml.indexOf('id="expired-codes"'));
+const workingRows = [...workingSection.matchAll(/<tr>\s*<td><code>([^<]+)<\/code><\/td>\s*<td>[\s\S]*?<\/td>\s*<td>([^<]+)<\/td>\s*<\/tr>/g)];
+if (workingRows.length === 0) fail("The codes page must publish its working-codes table.");
+for (const [, code, sources] of workingRows) {
+  const sourceCount = sources.split(",").map((value) => value.trim()).filter(Boolean).length;
+  if (sourceCount < 3) fail(`Working code ${code} needs at least 3 listing sources (found ${sourceCount}).`);
 }
 
 const stylesheet = await readFile(join(root, "public/styles.css"), "utf8");
