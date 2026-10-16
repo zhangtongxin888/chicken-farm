@@ -139,4 +139,49 @@ if (vercel.outputDirectory !== "public" || vercel.buildCommand !== "npm run buil
   fail("Vercel must publish only the validated public directory.");
 }
 
+const cspHeader = vercel.headers
+  ?.flatMap((group) => group.headers || [])
+  .find((header) => header.key === "Content-Security-Policy");
+if (!cspHeader?.value) fail("Content-Security-Policy header is missing.");
+const cspDirectives = new Map(
+  cspHeader.value
+    .split(";")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => {
+      const [name, ...sources] = part.split(/\s+/);
+      return [name, sources];
+    }),
+);
+const sourcesFor = (name) => cspDirectives.get(name) || [];
+for (const name of ["script-src", "frame-src", "img-src", "connect-src"]) {
+  if (!sourcesFor(name).includes("https:")) {
+    fail(`${name} must allow https: so rotating Banner and Native creative hosts can load.`);
+  }
+}
+for (const source of ["blob:", "data:"]) {
+  if (!sourcesFor("frame-src").includes(source)) {
+    fail(`frame-src must allow ${source} creative frames.`);
+  }
+}
+for (const source of ["wss:", "blob:"]) {
+  if (!sourcesFor("connect-src").includes(source)) {
+    fail(`connect-src must allow ${source} creative connections.`);
+  }
+}
+if (!sourcesFor("script-src").includes("blob:")) {
+  fail("script-src must allow blob: creative scripts.");
+}
+const locksDownScripts = sourcesFor("script-src").some((source) =>
+  ["'strict-dynamic'", "'nonce-", "'sha256-", "'sha384-", "'sha512-"].some((marker) => source.startsWith(marker)),
+);
+if (locksDownScripts) {
+  fail("script-src must not switch to nonce, hash, or strict-dynamic in this header.");
+}
+
+const adConfig = await readFile(join(root, "public/adsterra/config.js"), "utf8");
+if (!/"adsterraEnablePopunder":\s*false/.test(adConfig) || !/"adsterraEnableSocialBar":\s*false/.test(adConfig)) {
+  fail("Popunder and Social Bar must stay disabled.");
+}
+
 console.log(`Lint passed: ${pages.size} indexable pages, matching sitemap, metadata, links, facts, and responsive rules.`);
