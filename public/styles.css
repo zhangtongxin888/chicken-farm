@@ -1385,6 +1385,12 @@ h1 .highlight {
     gap: 44px;
   }
 
+  .hero-grid > .ad-placement-top {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+  }
+
   .hero-content {
     max-width: 720px;
   }
@@ -2027,4 +2033,50 @@ h1 .highlight {
     justify-self: start;
     white-space: normal;
   }
+}
+
+/* In-content Adsterra slots. Popunder, social bar, and sticky rail stay off. */
+
+.ad-placement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--content);
+  margin: 28px auto;
+}
+
+.ad-placement-top {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.hero-grid > .ad-placement-top {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  margin: 22px 0 0;
+}
+
+.ad-placement-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ad-placement-host,
+.ad-placement [id^="container-"] {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ad-placement-host {
+  overflow: hidden;
+}
+
+.ad-placement iframe {
+  max-width: 100%;
 }

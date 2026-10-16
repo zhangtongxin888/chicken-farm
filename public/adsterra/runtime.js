@@ -3,6 +3,7 @@ import { adsterraConfig } from "./config.js";
 
 const ADSTERRA_RUNTIME_MARKER = "adsterra-plain-runtime";
 const CLEAN_ROUTE_SEGMENTS = new Set(["about", "accessibility", "advertising-policy", "affiliate-disclosure", "contact", "cookie-policy", "cookies", "disclosure", "dmca", "editorial-policy", "legal", "privacy", "sources", "terms"]);
+const MAX_VISIBLE_SLOTS = 3;
 void ADSTERRA_RUNTIME_MARKER;
 void Object.values(adsterraConfig);
 
@@ -46,6 +47,39 @@ function bannerConfig(size) {
   return { key, scriptUrl, width, height };
 }
 
+function enqueueBanner(size, config, host) {
+  const queue = (window.__adsterraBannerQueue = window.__adsterraBannerQueue || []);
+  queue.push({ size, config, host });
+  drainAdsterraBannerQueue();
+}
+
+function drainAdsterraBannerQueue() {
+  const queue = window.__adsterraBannerQueue;
+  if (!queue?.length || window.__adsterraBannerDraining) return;
+  const job = queue[0];
+  window.__adsterraBannerDraining = true;
+  window.atOptions = {
+    key: job.config.key,
+    format: "iframe",
+    height: job.config.height,
+    width: job.config.width,
+    params: {},
+  };
+  const script = document.createElement("script");
+  script.id = `adsterra-banner-${job.size}`;
+  script.async = true;
+  script.dataset.cfasync = "false";
+  script.src = job.config.scriptUrl;
+  const release = () => {
+    if (queue[0] === job) queue.shift();
+    window.__adsterraBannerDraining = false;
+    drainAdsterraBannerQueue();
+  };
+  script.addEventListener("load", release, { once: true });
+  script.addEventListener("error", release, { once: true });
+  job.host.appendChild(script);
+}
+
 function mountBanner(size, className) {
   const config = bannerConfig(size);
   if (!config.key || !config.scriptUrl) return;
@@ -57,23 +91,123 @@ function mountBanner(size, className) {
   host.style.maxWidth = `${config.width}px`;
   shell.appendChild(host);
   document.body.appendChild(shell);
-  window.atOptions = { key: config.key, format: "iframe", height: config.height, width: config.width, params: {} };
-  addScript(`adsterra-banner-${size}`, config.scriptUrl, host);
+  enqueueBanner(size, config, host);
+}
+
+function ensureSlot(name, className) {
+  let slot = document.querySelector(`[data-adsterra-slot="${name}"]`);
+  if (!slot) {
+    slot = document.createElement("aside");
+    slot.className = className;
+    slot.dataset.adsterraSlot = name;
+    slot.setAttribute("aria-label", "Advertisement");
+    const label = document.createElement("p");
+    label.className = "ad-placement-label";
+    label.textContent = "Advertisement";
+    slot.appendChild(label);
+  }
+  return slot;
+}
+
+function mountBannerInto(size, shell) {
+  if (shell.dataset.adsterraFilled === "banner") return true;
+  const config = bannerConfig(size);
+  if (!config.key || !config.scriptUrl) return false;
+  const host = document.createElement("div");
+  host.className = "ad-placement-host";
+  host.style.minHeight = `${config.height}px`;
+  host.style.width = "100%";
+  host.style.maxWidth = `${config.width}px`;
+  shell.appendChild(host);
+  shell.dataset.adsterraFilled = "banner";
+  enqueueBanner(size, config, host);
+  return true;
 }
 
 export function mountAdsterraNative(container) {
-  if (!container || !adsterraConfig.adsterraNative1Id || !adsterraConfig.adsterraNative1ScriptUrl) return;
+  if (!container || !adsterraConfig.adsterraNative1Id || !adsterraConfig.adsterraNative1ScriptUrl) return false;
+  if (container.dataset.adsterraFilled === "native") return true;
   const target = document.createElement("div");
   target.id = adsterraConfig.adsterraNative1Id.replace(/^#/, "");
   container.appendChild(target);
+  container.dataset.adsterraFilled = "native";
   addScript("adsterra-native-1", adsterraConfig.adsterraNative1ScriptUrl, container);
+  return true;
+}
+
+function insertAfterHeader(slot, main) {
+  const header = document.querySelector("header");
+  if (header) header.insertAdjacentElement("afterend", slot);
+  else main.prepend(slot);
+}
+
+function placeEarlySlots(main) {
+  const top = ensureSlot("top", "ad-placement ad-placement-top ad-placement-above-fold ad-placement-banner");
+  const mid = ensureSlot("mid", "ad-placement ad-placement-mid ad-placement-native");
+  const bottom = ensureSlot("bottom", "ad-placement ad-placement-bottom ad-placement-rectangle");
+  mid.dataset.adsterraFormat = "native";
+
+  if (!top.parentElement) {
+    const heroContent = main.querySelector(":scope > .hero .hero-grid > .hero-content");
+    const hero = main.querySelector(":scope > .page-hero, :scope > .hero, :scope > section");
+    if (heroContent) {
+      // Homepage: after the headline column and before the farm scene, so the title
+      // stays first. Desktop CSS pulls this row full-width under the scene.
+      heroContent.insertAdjacentElement("afterend", top);
+    } else if (hero) {
+      const overlap = hero.nextElementSibling;
+      const anchor = overlap?.classList.contains("trust-strip") ? overlap : hero;
+      anchor.insertAdjacentElement("afterend", top);
+    } else {
+      insertAfterHeader(top, main);
+    }
+    // A tall first screen (homepage farm scene on a phone) would hide the banner.
+    // Pull it up under the header when it would otherwise start below the fold.
+    if (top.getBoundingClientRect().top > window.innerHeight * 0.85) insertAfterHeader(top, main);
+  }
+
+  if (!bottom.parentElement) main.appendChild(bottom);
+
+  if (!mid.parentElement) {
+    const guideStep = main.querySelector(".guide-shell article");
+    if (guideStep) {
+      guideStep.insertAdjacentElement("afterend", mid);
+    } else {
+      const section = [...main.querySelectorAll(":scope > section")].find(
+        (node) => !node.classList.contains("hero") && !node.classList.contains("page-hero") && !node.classList.contains("closing-card"),
+      );
+      if (section) section.insertAdjacentElement("afterend", mid);
+      else bottom.insertAdjacentElement("beforebegin", mid);
+    }
+  }
+
+  return { top, mid, bottom };
+}
+
+function mountEarlyPlacements() {
+  const main = document.querySelector("main");
+  if (!main) return;
+  const { top, mid, bottom } = placeEarlySlots(main);
+  const leaderboard = window.matchMedia("(min-width: 768px)").matches ? "728x90" : "320x50";
+  let visible = 0;
+  if (visible < MAX_VISIBLE_SLOTS && mountBannerInto(leaderboard, top)) visible += 1;
+  else top.remove();
+  if (visible < MAX_VISIBLE_SLOTS && mountAdsterraNative(mid)) visible += 1;
+  else mid.remove();
+  if (visible < MAX_VISIBLE_SLOTS && mountBannerInto("300x250", bottom)) visible += 1;
+  else bottom.remove();
 }
 
 function mountAdsterraRuntime() {
-  if (cleanRoute()) return;
+  if (document.documentElement.dataset.adsterraRuntimeMounted === "1") return;
+  document.documentElement.dataset.adsterraRuntimeMounted = "1";
+  if (cleanRoute()) {
+    document.querySelectorAll("[data-adsterra-slot]").forEach((slot) => slot.remove());
+    return;
+  }
   const loader = document.querySelector("script[data-adsterra-runtime]");
-  if (loader?.dataset.globalFallback === "true") {
-    mountBanner(window.matchMedia("(min-width: 768px)").matches ? "728x90" : "320x50", "adsterra-global-fallback");
+  if (loader?.dataset.globalFallback === "true" || document.querySelector("[data-adsterra-slot]")) {
+    mountEarlyPlacements();
   }
   if (adsterraConfig.adsterraEnableStickyRail) mountBanner("160x600", "adsterra-sticky-rail");
   if (adsterraConfig.adsterraEnableSocialBar) {
@@ -92,8 +226,10 @@ function mountAdsterraRuntime() {
   }
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", mountAdsterraRuntime, { once: true });
-} else {
-  mountAdsterraRuntime();
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", mountAdsterraRuntime, { once: true });
+  } else {
+    mountAdsterraRuntime();
+  }
 }
