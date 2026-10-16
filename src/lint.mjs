@@ -183,5 +183,30 @@ const adConfig = await readFile(join(root, "public/adsterra/config.js"), "utf8")
 if (!/"adsterraEnablePopunder":\s*false/.test(adConfig) || !/"adsterraEnableSocialBar":\s*false/.test(adConfig)) {
   fail("Popunder and Social Bar must stay disabled.");
 }
+if (!/"adsterraEnableStickyRail":\s*false/.test(adConfig)) {
+  fail("Sticky rail must stay disabled.");
+}
+
+const adRuntime = await readFile(join(root, "public/adsterra/runtime.js"), "utf8");
+for (const marker of [
+  "ad-placement-top",
+  "ad-placement-mid",
+  "ad-placement-bottom",
+  "728x90",
+  "320x50",
+  "300x250",
+  "mountAdsterraNative",
+  "cleanRoute()",
+]) {
+  if (!adRuntime.includes(marker)) fail(`Plain Adsterra runtime is missing ${marker}.`);
+}
+if (/adsterraEnable(?:Popunder|SocialBar|StickyRail)\s*[:=]\s*true/.test(adRuntime)) {
+  fail("Runtime must not enable popunder, social bar, or sticky rail.");
+}
+for (const [route, html] of htmlByRoute) {
+  if (!html.includes('src="/adsterra/runtime.js"') || !html.includes("data-adsterra-runtime")) {
+    fail(`${route} must load the plain Adsterra runtime.`);
+  }
+}
 
 console.log(`Lint passed: ${pages.size} indexable pages, matching sitemap, metadata, links, facts, and responsive rules.`);
