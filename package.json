@@ -8,6 +8,6 @@
     "audit:design": "node src/design-audit.mjs",
     "lint": "node src/lint.mjs",
     "test": "node src/test.mjs",
-    "build": "node src/validate.mjs"
+    "build": "node scripts/adsterra-pop.mjs public && node src/validate.mjs"
   }
 }
